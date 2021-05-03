@@ -176,13 +176,13 @@ void Network::PrintCurrentState()
 			switch (Target->State)
 			{
 			case NodeState::Active :
-				Out = "O";
+				Out = "-";
 				break;
 			case NodeState::Attacked:
-				Out = "@";
+				Out = "O";
 				break;
 			case NodeState::Deactivated:
-				Out = "X";
+				Out = "@";
 				break;
 			default:
 				break;
@@ -191,6 +191,7 @@ void Network::PrintCurrentState()
 		}
 		std::cout << std::endl;
 	}
+	std::cout << "DeactivateRatio = " << GetDeActivateRatio() << std::endl;
 }
 
 void Network::DistroyNodes()
